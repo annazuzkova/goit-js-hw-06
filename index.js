@@ -124,4 +124,39 @@ const users = [
 // console.log(getUsersWithAge(users, 20, 30)); // [об'єкт Ross Vazquez, об'єкт Elma Head, об'єкт Carey Barr]
 
 // console.log(getUsersWithAge(users, 30, 40));
-// [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Blackburn Dotson, об'єкт Sheree Anthony]/
+// [об'єкт Moore Hensley, об'єкт Sharlene Bush, об'єкт Blackburn Dotson, об'єкт Sheree Anthony]
+
+//7
+// const calculateTotalBalance = (users) => {
+//   return users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
+// };
+
+// console.log(calculateTotalBalance(users)); // 20916
+// //8
+// const getUsersWithFriend = (users, friendName) => {
+//   return users
+//     .filter((user) => user.friends.includes(friendName))
+//     .map((user) => user.name);
+// };
+
+// console.log(getUsersWithFriend(users, "Briana Decker")); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+// console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sheree Anthony' ]
+//9
+// const getNamesSortedByFriendsCount = (users) => {
+//   return users
+//     .sort((next, prev) => next.friends.lenght - prev.friends.lenght)
+//     .map((user) => user.name);
+// };
+// console.log(getNamesSortedByFriendsCount(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
+//10
+const getSortedUniqueSkills = (users) => {
+  const allSkillsOfUsers = users.reduce((allSkills, user) => {
+    allSkills.push(...user.skills);
+    return allSkills;
+  }, []);
+  return allSkillsOfUsers.sort();
+};
+
+console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
